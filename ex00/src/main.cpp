@@ -6,7 +6,7 @@
 /*   By: asemykin <asemykin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/02 03:23:00 by asemykin          #+#    #+#             */
-/*   Updated: 2026/03/02 04:30:33 by asemykin         ###   ########.fr       */
+/*   Updated: 2026/03/02 12:24:10 by asemykin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,28 +16,42 @@ int main()
 {
     Bureaucrat a;
     Bureaucrat b(1);
-    Bureaucrat c("#C",100);
-    Bureaucrat d("#D",125);
+    Bureaucrat c("#C",1);
+    Bureaucrat d("#D");
     Bureaucrat e(c);
     
     std::cout << "" << std::endl;
     
     b = d;
     
-    a.decrementGrade(5);
-    c.incrementGrade(5);
+    b.decrementGrade();
+    e.incrementGrade();
     
     std::cout << "" << std::endl;
     
     try{
-        a.decrementGrade(200);
+        Bureaucrat f("#F",0);
+        Bureaucrat g("#G",155);
+    }
+    catch(std::exception &e){
+        std::cout << "Exception: " << e.what() << std::endl;
+    }
+    try{
+        Bureaucrat h("#H",200);
+        Bureaucrat i("#I",0);
+    }
+    catch(std::exception &e){
+        std::cout << "Exception: " << e.what() << std::endl;
+    }
+    
+    try{
+        a.incrementGrade();
     }
     catch(std::exception &e){
         std::cout << "Exception: " << a.getName() << " : " << e.what() << std::endl;
     }
-
     try{
-        c.incrementGrade(300);
+        c.decrementGrade();
     }
     catch(std::exception &e){
         std::cout << "Exception: " << c.getName() << " : " << e.what() << std::endl;

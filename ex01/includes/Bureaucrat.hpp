@@ -6,13 +6,15 @@
 /*   By: asemykin <asemykin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/01 23:33:11 by asemykin          #+#    #+#             */
-/*   Updated: 2026/03/03 09:02:11 by asemykin         ###   ########.fr       */
+/*   Updated: 2026/03/03 11:08:23 by asemykin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # pragma once
 
 #include <iostream>
+
+class Form;
 
 class Bureaucrat{
     private:
@@ -36,11 +38,12 @@ class Bureaucrat{
                 virtual const char* what() const throw();
         };
         
+        void signForm(Form &form)const;
+        
         const std::string &getName()const;
-        int getGrade();
+        int getGrade()const;
         void incrementGrade();
         void decrementGrade();
-        
 };
 
 std::ostream &operator<<(std::ostream& os, const Bureaucrat& src);
