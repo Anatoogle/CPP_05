@@ -6,7 +6,7 @@
 /*   By: asemykin <asemykin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/02 12:29:28 by asemykin          #+#    #+#             */
-/*   Updated: 2026/03/12 14:10:42 by asemykin         ###   ########.fr       */
+/*   Updated: 2026/03/12 23:21:48 by asemykin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,8 @@
 
 int main(int argc, char **argv)
 {
-    (void)argc;
+    if(argc != 2)
+        return 0;
     
     int check = atoi(argv[1]);
     switch(check){
