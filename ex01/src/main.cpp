@@ -16,7 +16,8 @@
 
 int main(int argc, char **argv)
 {
-    (void)argc;
+    if(argc != 2)
+        return 0;
     int check = atoi(argv[1]);
     switch(check){
         case 1:
